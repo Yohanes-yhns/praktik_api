@@ -24,4 +24,8 @@ const CarsTable = dbConn.define('cars', {
     timestamps:false,
 });
 
+CarsTable.associate = function(model) {
+    CarsTable.hasMany(model.OrdersTable, { foreignKey: "cars_id" });
+}
+
 module.exports = CarsTable;
