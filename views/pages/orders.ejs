@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body>
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+    <main>
+        <div class="jumbotron">
+            <h3>Data Orderan</h3>
+            <p>Orderan yang sewa kami:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID Order</th>
+                        <th>ID Mobil</th>
+                        <th>Nama Mobil</th>
+                        <th>Qty</th>
+                        <th>Order Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% data.forEach(function(value){ %>
+                    <tr>
+                        <td><%= value.id %></td>
+                        <td><%= value.cars_id %></td>
+                        <td><%= value.cars.cars_name %> (<%= value.cars.cars_brand %> <%= value.cars.year %>)</td>
+                        <td><%= value.qty %></td>
+                        <td><%= value.order_date %></td>
+                    </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+</body>
+</html>
