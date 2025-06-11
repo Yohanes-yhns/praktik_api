@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body>
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+    <main>
+        <div class="jumbotron">
+            <h3>Data Mobil</h3>
+            <p>Produk mobil kami sebagai berikut:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Cars Name:</th>
+                        <th>Brand:</th>
+                        <th>Tahun Rilis:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% data.forEach(function(value){ %>
+                    <tr>
+                        <td><%= value.id %></td>
+                        <td><%= value.cars_name %></td>
+                        <td><%= value.cars_brand %></td>
+                        <td><%= value.year %></td>
+                    </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+</body>
+</html>
